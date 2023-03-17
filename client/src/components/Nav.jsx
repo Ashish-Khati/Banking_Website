@@ -11,35 +11,37 @@ const Nav = () => {
          smooth={true}
          spy={true}
          offset={-200}
-          className='cursor-pointer w-[60px] h-[60px] flex items-center justify-center'>
+          className='hover:bg-blue-600 rounded-full hover:text-white cursor-pointer w-[60px] h-[60px] flex items-center justify-center'>
         <BiHomeAlt/>
         </Link>
         <Link to="about" 
          activeClass='active'
          smooth={true}
          spy={true}
-         className='cursor-pointer w-[60px] h-[60px] flex items-center justify-center'>
-        <BiUser/>
+         className='hover:bg-blue-600 rounded-full hover:text-white cursor-pointer w-[60px] h-[60px] flex items-center justify-center'>
+        <BiUser
+        className=''
+        />
         </Link>
         <Link to="services"
          activeClass='active'
          smooth={true}
          spy={true}
-         className='cursor-pointer w-[60px] h-[60px] flex items-center justify-center'>
+         className='hover:bg-blue-600 rounded-full hover:text-white cursor-pointer w-[60px] h-[60px] flex items-center justify-center'>
         <BsClipboardData/>
         </Link>
-        <Link to="work" 
+        <Link to="service" 
          activeClass='active'
          smooth={true}
          spy={true}
-         className='cursor-pointer w-[60px] h-[60px] flex items-center justify-center'>
+         className='hover:bg-blue-600 rounded-full hover:text-white cursor-pointer w-[60px] h-[60px] flex items-center justify-center'>
         <BsBriefcase/>
         </Link>
         <Link to="contact"
         activeClass='active'
         smooth={true}
         spy={true}
-        className='cursor-pointer w-[60px] h-[60px] flex items-center justify-center'>
+        className='hover:bg-blue-600 rounded-full hover:text-white cursor-pointer w-[60px] h-[60px] flex items-center justify-center'>
         <BsChatSquare/>
         </Link>
       </div>

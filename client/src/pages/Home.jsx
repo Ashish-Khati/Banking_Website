@@ -1,12 +1,16 @@
 import React from 'react'
-import { Nav,Header,Banner,Service } from '../components'
+import { Nav,Header,Banner,Service, Footer, Action, About, Contact } from '../components'
 const Home = () => {
   return (
-    <div className=''>
+    <div className='max-w-auto'>
         <Nav/>
         <Header/>
         <Banner/>
+        <Action/>
+        <About/>
         <Service/>
+        <Contact/>
+        <Footer/>
     </div>
   )
 }
