@@ -1,12 +1,17 @@
 import React from 'react'
-import { Home } from './pages'
+import { BrowserRouter,Link,Route,Routes } from 'react-router-dom'
+import { Home,Customer } from './pages'
 const App = () => {
   return (
+    <BrowserRouter>
     <div className='max-w-screen'>
       <Home/>
-      <div ></div>
+    <Customer/>
     </div>
+    </BrowserRouter>
   )
 }
 
 export default App
+
+// sm:p-8 px-4 py-8 w-full bg-[#f9fafe] min-h-[calc(100vh-73px)]

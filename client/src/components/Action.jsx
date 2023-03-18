@@ -4,22 +4,52 @@ import {FiPhone} from 'react-icons/fi'
 import {FaMoneyBillAlt} from 'react-icons/fa'
 import {BsBank} from 'react-icons/bs';
 import { useState } from 'react';
+import axios from 'axios';
 
 
 
-let name,value
+
+const Action = () => {
+  const [data,setData]=useState({
+    name:"",
+    myaccount:"",
+    receiveraccount:"",
+    amount:""
+  })
+
+  let name,value
 const handleInput=(e)=>{
   name=e.target.name;
   value=e.target.value
   setData({...data,[name]:value})
 }
-const Action = () => {
-  const [data,setData]=useState({
-    name:"",
-    yourAccountNumber:"",
-    reciverAccountNumber:"",
-    amount:""
-  })
+
+const sendMoney=async(e)=>{
+  e.preventDefault();
+  const {name,myaccount,receiveraccount,amount}=data;
+  // const res=await fetch('/transfer',{
+  //     method:"POST",
+  //     mode: 'no-cors',
+  //     headers:{
+  //       "Content-Type":"application/json"
+  //     },
+  //     body:JSON.stringify({
+  //       name, myaccount, receiveraccount, amount
+  //     })
+  // });
+
+  const res=await axios.post("/transfer",data);
+  const d=await res.json();
+  if(res.status===422 || !d)
+  {
+    window.alert("Invalid");
+  }
+  else{
+    window.alert("Money transfer successfully");
+  }
+ 
+}
+
   return (
     <div className='flex flex-col md:flex-row  py-10 max-h-auto max-w-auto space-x-10 bg-gray-100 items-center '>
         <h3 className='font-bold text-2xl px-10 w-auto space-x-10'>Online Money</h3>
@@ -33,7 +63,7 @@ const Action = () => {
         </div >
         <div className='relative border  w-[50%] md:w-auto mt-5 '>
         < input 
-        value={data.name}
+        value={data.myaccount}
         onChange={handleInput}
         name="myaccount"
         type="number" className='rounded-md py-5 pl-5 pr-10 space-x-10 md:w-auto w-full' placeholder='Your Account Number'/>
@@ -41,21 +71,21 @@ const Action = () => {
         </div >
         <div className='relative border  w-[50%] md:w-auto mt-5 '>
         < input 
-        value={data.name}
+        value={data.receiveraccount}
         onChange={handleInput}
-        name="reciveraccount"
+        name="receiveraccount"
         type="number" className=' appearance-none rounded-md py-5 pl-5 pr-10 space-x-10 md:w-auto w-full' placeholder='Reciever Account Number'/>
         <BsBank className='text-blue-400 absolute right-5 top-6'/>
         </div >
         <div className='relative border  w-[50%] md:w-auto mt-5 '>
         < input 
-        value={data.name}
+        value={data.amount}
         onChange={handleInput}
         name="amount"
         type="number" className='rounded-md py-5  pl-5 pr-10 space-x-10 md:w-auto w-full' placeholder='Amount'/>
         <FaMoneyBillAlt className='text-blue-400 absolute right-5 top-6'/>
         </div >
-        <button className='rounded-lg bg-blue-400 lg:px-8 lg:py-2   w-[50%] md:w-auto mt-5 text-white'>Send</button>
+        <button className='rounded-lg bg-blue-400 lg:px-8 lg:py-2   w-[50%] md:w-auto mt-5 text-white' onClick={sendMoney}>Send</button>
         
     </div>
   )

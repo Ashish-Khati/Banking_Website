@@ -1,2 +1,3 @@
 import Home from "./Home";
-export {Home}
+import Customer from "./Customer";
+export {Home,Customer}

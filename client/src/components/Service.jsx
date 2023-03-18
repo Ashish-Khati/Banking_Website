@@ -90,7 +90,7 @@ const Service = () => {
  
 
     {data.map((value,index)=>{
-      console.log(value)
+      // console.log(value)
       return(<Card
       key={index}
       imgsrc={value.imgsrc}
