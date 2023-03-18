@@ -1,5 +1,5 @@
 import React from 'react'
-import { Nav,Header,Banner,Service, Footer, Action, About, Contact } from '../components'
+import { Nav,Header,Banner,Service, Action, About, Contact } from '../components'
 const Home = () => {
   return (
     <div className='max-w-auto'>
@@ -10,7 +10,7 @@ const Home = () => {
         <About/>
         <Service/>
         <Contact/>
-        <Footer/>
+
     </div>
   )
 }

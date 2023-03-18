@@ -5,12 +5,7 @@ import {FaMoneyBillAlt} from 'react-icons/fa'
 import {BsBank} from 'react-icons/bs';
 import { useState } from 'react';
 
-const [data,setData]=useState({
-  name:"",
-  yourAccountNumber:"",
-  reciverAccountNumber:"",
-  amount:""
-})
+
 
 let name,value
 const handleInput=(e)=>{
@@ -19,6 +14,12 @@ const handleInput=(e)=>{
   setData({...data,[name]:value})
 }
 const Action = () => {
+  const [data,setData]=useState({
+    name:"",
+    yourAccountNumber:"",
+    reciverAccountNumber:"",
+    amount:""
+  })
   return (
     <div className='flex flex-col md:flex-row  py-10 max-h-auto max-w-auto space-x-10 bg-gray-100 items-center '>
         <h3 className='font-bold text-2xl px-10 w-auto space-x-10'>Online Money</h3>
@@ -34,7 +35,7 @@ const Action = () => {
         < input 
         value={data.name}
         onChange={handleInput}
-        name="myAN"
+        name="myaccount"
         type="number" className='rounded-md py-5 pl-5 pr-10 space-x-10 md:w-auto w-full' placeholder='Your Account Number'/>
         <BsBank className='text-blue-400 absolute right-5 top-6'/>
         </div >
@@ -42,7 +43,7 @@ const Action = () => {
         < input 
         value={data.name}
         onChange={handleInput}
-        name="rAN"
+        name="reciveraccount"
         type="number" className=' appearance-none rounded-md py-5 pl-5 pr-10 space-x-10 md:w-auto w-full' placeholder='Reciever Account Number'/>
         <BsBank className='text-blue-400 absolute right-5 top-6'/>
         </div >

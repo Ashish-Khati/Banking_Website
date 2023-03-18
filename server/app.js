@@ -1,19 +1,21 @@
 const express=require('express')
-const dotenv=require('dotenv')
-const mongoose= require('mongoose')
 const app=express();
+const dotenv=require('dotenv')
+require('./DB/conn')
 dotenv.config({path:'./config.env'})
-const DB=process.env.DATABASE;
-mongoose.connect(DB,{
-    useNewUrlParser:true,
-}).then(()=>{
-    console.log("Connection successfull")
-}).catch((err)=>console.log('no connection',err))
+const PORT=process.env.PORT
 
-app.get('/',(req,res)=>{
-    res.send(`Hello myself Ashish`)
-})
+const routes=require('./router/auth')
+// middleware
+app.use(express.json());
+app.use('/',routes)
 
-app.listen(3000,()=>{
+
+
+// app.get('/',(req,res)=>{
+//     res.send(`Hello myself Ashish`)
+// })
+
+app.listen(PORT,()=>{
     console.log(`server is running`)
 })
