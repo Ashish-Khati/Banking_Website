@@ -13,6 +13,12 @@ const userSchema=new mongoose.Schema({
         type:Number,
         required:true
     },
+    debit:{
+        type:String,
+    },
+    credit:{
+        type:String,
+    }
    
 })
 

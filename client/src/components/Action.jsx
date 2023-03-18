@@ -26,25 +26,19 @@ const handleInput=(e)=>{
 
 const sendMoney=async(e)=>{
   e.preventDefault();
-  const {name,myaccount,receiveraccount,amount}=data;
-  // const res=await fetch('/transfer',{
-  //     method:"POST",
-  //     mode: 'no-cors',
-  //     headers:{
-  //       "Content-Type":"application/json"
-  //     },
-  //     body:JSON.stringify({
-  //       name, myaccount, receiveraccount, amount
-  //     })
-  // });
+  // const {name,myaccount,receiveraccount,amount}=data;
 
-  const res=await axios.post("/transfer",data);
-  const d=await res.json();
-  if(res.status===422 || !d)
-  {
-    window.alert("Invalid");
+  const res=await axios.post("http://localhost:3000/transfer",data);
+  if (res.data === 2) {
+    window.alert("Invalid sender account number");
   }
-  else{
+  else if (res.data === 0) {
+    window.alert("Invalid amount");
+  }
+  else if (res.data === 1) {
+    window.alert("Invalid receiver account number");
+  }
+  else {
     window.alert("Money transfer successfully");
   }
  

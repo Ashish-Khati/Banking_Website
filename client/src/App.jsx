@@ -4,10 +4,14 @@ import { Home,Customer } from './pages'
 const App = () => {
   return (
     <BrowserRouter>
-    <div className='max-w-screen'>
+    {/* <div className='max-w-screen'>
       <Home/>
     <Customer/>
-    </div>
+    </div> */}
+    <Routes>
+    <Route path="/" element={<Home />} />
+        <Route path="/viewcustomer" element={<Customer />} />
+    </Routes>
     </BrowserRouter>
   )
 }

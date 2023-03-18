@@ -13,9 +13,7 @@ router.get("/user",async(req,res)=>{
   }
 })
 
-// router.get('/register',(req,res)=>{
-//     res.send("hello from register");
-// })
+
 
 // router.post('/register',(req,res)=>{
 //     const {name,myaccount, balance}=req.body
@@ -45,36 +43,79 @@ router.get("/user",async(req,res)=>{
 
 
 
-router.post('/transfer', async (req, res) => {
-    const {name,myaccount,receiveraccount,amount}=req.body;
-    // console.log(receiveraccount);
-    try {
-      // Find the sender and check if they have enough balance
-      const sender = await User.findOne({ myaccount: myaccount });
-      const receiver = await User.findOne({ myaccount: receiveraccount});
-        console.log(receiver);
+// router.post('/transfer', async (req, res) => {
+//     const {name,myaccount,receiveraccount,amount}=req.body;
+//     // console.log(receiveraccount);
+//     try {
+//       // Find the sender and check if they have enough balance
+//       const sender = await User.findOne({ myaccount: myaccount });
+//       const receiver = await User.findOne({ myaccount: receiveraccount});
+//         console.log(receiver);
       
-      if (!sender || sender.balance < amount) {
-        return res.status(400).json({ error: 'Invalid sender account or insufficient balance' });
-      }
+//       if (!sender || sender.balance < amount) {
+//         return res.status(400).json({ error: 'Invalid sender account or insufficient balance' });
+//       }
   
-      // Find the receiver
+//       // Find the receiver
      
-      if (!receiver) {
-        return res.status(400).json({ error: 'Invalid receiver account' });
-      }
+//       if (!receiver) {
+//         return res.status(400).json({ error: 'Invalid receiver account' });
+//       }
   
+//       // Update the balance of the sender and receiver
+//       const senderUpdated = await User.findOneAndUpdate({ myaccount: myaccount },
+//          { $inc: { balance: -amount } },
+//           { new: true });
+//       console.log(senderUpdated)
+//       const receiverUpdated = await User.findOneAndUpdate({myaccount: receiveraccount  }, { $inc: { balance: amount } }, { new: true });
+//       console.log(receiverUpdated)
+  
+//       res.status(200).json({ sender: senderUpdated, receiver: receiverUpdated });
+//     } catch (err) {
+//       res.status(500).json({ error: err.message });
+//     }
+//   });
+
+
+
+router.post('/transfer', async (req, res) => {
+  const { name, myaccount, receiveraccount, amount } = req.body;
+  console.log(myaccount);
+  try {
+    // Find the sender and check if they have enough balance
+    const sender = await User.findOne({ myaccount: myaccount });
+    console.log(sender);
+    const receiver = await User.findOne({ myaccount: receiveraccount });
+    console.log(receiver);
+   
+    if (!sender) {
+      res.status(200).json(2);
+    } 
+
+    if (!receiver) {
+      res.status(200).json(1);
+    }
+    
+    if (sender.balance < amount) {
+      res.status(200).json(0);
+    }
+
+    // Find the receiver
+    if (sender && receiver && sender.balance >= amount) {
       // Update the balance of the sender and receiver
       const senderUpdated = await User.findOneAndUpdate({ myaccount: myaccount }, { $inc: { balance: -amount } }, { new: true });
       console.log(senderUpdated)
-      const receiverUpdated = await User.findOneAndUpdate({myaccount: receiveraccount  }, { $inc: { balance: amount } }, { new: true });
+      const receiverUpdated = await User.findOneAndUpdate({ myaccount: receiveraccount }, { $inc: { balance: amount } }, { new: true });
       console.log(receiverUpdated)
-  
+
       res.status(200).json({ sender: senderUpdated, receiver: receiverUpdated });
-    } catch (err) {
-      res.status(500).json({ error: err.message });
     }
-  });
+  }
+  catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+
+});
 
   
 module.exports = router;

@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
-import { Table } from "../components";
 import axios from "axios";
+import { Table } from "../components";
+// import axios from "axios";
 
 // const API = "https://jsonplaceholder.typicode.com/users";
 
@@ -10,9 +11,7 @@ const Customer = () => {
 
     const getData =  async() => {
         const data=await axios.get('http://localhost:3000/user')
-        console.log("users===>>>",data )
         setUsers(data)
-        console.log(users.data.data)
     }
 
 
@@ -33,7 +32,7 @@ const Customer = () => {
             <tbody>
            
                 {users && users?.data?.data.map((curUser) => {
-                    console.log(curUser)
+                    // console.log(curUser)
                     const {id, name, myaccount,balance} = curUser;
                     // const {street, city, zipcode} = curUser.address;
 
