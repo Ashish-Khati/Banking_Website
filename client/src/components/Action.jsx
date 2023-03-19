@@ -1,15 +1,17 @@
 import React from 'react'
+// import { useState,useEffect } from 'react'
 import {BiUser} from 'react-icons/bi'
 import {FiPhone} from 'react-icons/fi'
 import {FaMoneyBillAlt} from 'react-icons/fa'
 import {BsBank} from 'react-icons/bs';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import axios from 'axios';
 
 
 
 
 const Action = () => {
+ 
   const [data,setData]=useState({
     name:"",
     myaccount:"",
@@ -25,8 +27,12 @@ const handleInput=(e)=>{
 }
 
 const sendMoney=async(e)=>{
-  e.preventDefault();
-  // const {name,myaccount,receiveraccount,amount}=data;
+  // e.preventDefault();
+ 
+  //  *************************************************
+
+
+  // *************************************************
 
   const res=await axios.post("http://localhost:3000/transfer",data);
   if (res.data === 2) {
@@ -45,7 +51,7 @@ const sendMoney=async(e)=>{
 }
 
   return (
-    <div className='flex flex-col md:flex-row  py-10 max-h-auto max-w-auto space-x-10 bg-gray-100 items-center '>
+    <div  id="action" className='flex flex-col md:flex-row  py-10 max-h-auto max-w-auto space-x-10 bg-gray-100 items-center '>
         <h3 className='font-bold text-2xl px-10 w-auto space-x-10'>Online Money</h3>
         <div className='relative border  w-[50%] md:w-auto mt-5 '>
         < input 

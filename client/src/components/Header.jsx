@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 const Header = () => {
   return (
    <div className='px-10 h-[80px] flex  space-x-10 justify-between items-center bg-gradient-to-r from-cyan-500 to-blue-500'>
@@ -9,12 +10,16 @@ const Header = () => {
     </div>
     <div className='max-w-auto md:flex space-x-10 justify-between mx-10 hidden '>
         <ul className='flex space-x-10 '>
-            <li><a className='text-white hover:text-red-500' href="#">Home</a></li>
-            <li><a className='text-white hover:text-red-500' href="#">Work</a></li>
-            <li><a className='text-white hover:text-red-500' href="#">Service</a></li>
-            <li><a className='text-white hover:text-red-500' href="#">Contact</a></li>
+            <li><a className='text-white hover:text-red-500' href="#home"  activeClass='active'
+         smooth={true}
+         spy={true}>Home</a></li>
+            <li><a className='text-white hover:text-red-500' href="#about"  activeClass='active'
+         smooth={true}
+         spy={true}>About Us</a></li>
+            <li><a className='text-white hover:text-red-500' href="#services">Service</a></li>
+            <li><a className='text-white hover:text-red-500' href="#contact">Contact</a></li>
         </ul>
-        <button className=' text-white rounded-lg hover:bg-blue-400 lg:px-2 bg-green-400'>Sign up</button>
+        <button className=' text-white rounded-lg hover:bg-green-500 lg:px-2 bg-green-400'><Link to='/' className='text-white hover:text-white'>Open Your Account</Link></button>
     </div>
    </div>
   )

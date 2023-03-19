@@ -2,8 +2,8 @@ import React from 'react'
 import newsletter from "../assets/newletter.jpg"
 const Contact = () => {
   return (
-   <div className='py-10 px-10 '>
-    <h1 className='text-center'>Contact Us</h1>
+   <div id="contact" className='py-10 px-10 bg-white'>
+    <h1 className='text-center '>Contact Us</h1>
    <div className='flex'>
    <div className='px-10 py-5 rounded-lg bg-blue-100 h-[650px] shadow-gray-900'>
     <div className=' pt-10'>

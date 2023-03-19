@@ -1,7 +1,7 @@
 import React from 'react'
 const About = () => {
   return (
-    <div className='px-10 py-10 bg-[url("./assets/banklogo.png")] md:bg-no-repeat bg-contain bg-right'>
+    <div id="about" className='px-10 py-10 bg-[url("./assets/banklogo.png")] md:bg-no-repeat bg-contain bg-right'>
         <div className=' md:w-[60%] md-[80%]'>
             <h3 className='text-black font-bold text-2xl'>______ About us</h3>
             <div className='mt-5'>

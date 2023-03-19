@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
-import { Table } from "../components";
+import { Table,Action,Nav,Contact } from "../components";
 // import axios from "axios";
 
 // const API = "https://jsonplaceholder.typicode.com/users";
@@ -19,8 +19,18 @@ const Customer = () => {
         getData();
     }, [])
     return <>
- 
-        <table className="w-full">
+
+           <div  className=' bg-[url("./assets/employee.jpg")] md:bg-repeat bg-fixed bg-cover border border-black h-auto w-screen '>
+           <Nav
+           l1='/'
+           l2='action'
+           l3='customer'
+           l4='contact'
+
+           />
+            <Action/>
+            <div className="text-center my-10"><h1>Customer Details</h1></div>
+        <table id="customer" className=" pr-20  table-fixed border-separate w-screen ml-10  rounded-lg mb-40">
             <thead className="bg-gray-50  border-b-2 border-gray-200">
             <tr>
                 {/* <th className="p-3 w-24 text-sm font-semibold tracking-wide text-left">ID</th> */}
@@ -37,9 +47,9 @@ const Customer = () => {
                     // const {street, city, zipcode} = curUser.address;
 
                     return (
-                        <tr className="" key={id}>
+                        <tr className="bg-gray-200" key={id}>
                         {/* <td className="p-3 text-sm text-gray-700">{id}</td> */}
-                        <td className="p-3 text-sm text-gray-700">{name}</td>
+                        <td className="p-3 text-sm  text-gray-700">{name}</td>
                         <td className="p-3 text-sm text-gray-700">{myaccount}</td>
                         <td className="p-3 text-sm text-gray-700">{balance}</td>
                         </tr>
@@ -50,6 +60,8 @@ const Customer = () => {
             {/* <Table users={users}/> */}
             </tbody>
         </table>
+        <Contact/>
+           </div>
         
     </>
 }

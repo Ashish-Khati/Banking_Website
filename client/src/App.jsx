@@ -1,16 +1,19 @@
 import React from 'react'
 import { BrowserRouter,Link,Route,Routes } from 'react-router-dom'
+import { AboutMe } from './components'
 import { Home,Customer } from './pages'
 const App = () => {
   return (
     <BrowserRouter>
-    {/* <div className='max-w-screen'>
-      <Home/>
+    {/* <div className='max-w-screen'> */}
+      {/* <Home/>
     <Customer/>
-    </div> */}
+    <AboutMe/> */}
+    {/* </div> */}
     <Routes>
-    <Route path="/" element={<Home />} />
+    <Route exact path="/" element={<Home />} />
         <Route path="/viewcustomer" element={<Customer />} />
+        <Route path="/aboutme" element={<AboutMe />} />
     </Routes>
     </BrowserRouter>
   )

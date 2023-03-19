@@ -92,11 +92,11 @@ router.post('/transfer', async (req, res) => {
       res.status(200).json(2);
     } 
 
-    if (!receiver) {
+   else if (!receiver) {
       res.status(200).json(1);
     }
     
-    if (sender.balance < amount) {
+   else if (sender.balance < amount) {
       res.status(200).json(0);
     }
 

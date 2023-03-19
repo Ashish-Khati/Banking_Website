@@ -48,7 +48,7 @@ const data=[
 ]
 const Service = () => {
   return (
-  <div className='bg-gray-200 pb-20'>
+  <div  id="services" className='bg-gray-200 pb-20'>
     <div className='text-center pt-10 pb-10 '>
       <h2 className=' text-xl font-medium pb-5 text-blue-400'>----OUR SERVICES----</h2>
       <h1 className='text-3xl font-medium'>We are Interested for Your <span className='text-blue-400'>Mobile</span>  <br />  Banking Service</h1>
