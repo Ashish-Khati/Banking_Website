@@ -36,13 +36,13 @@ const sendMoney=async(e)=>{
 
   const res=await axios.post("http://localhost:3000/transfer",data);
   if (res.data === 2) {
-    window.alert("Invalid sender account number");
+    window.alert("Invalid Sender Account Number");
   }
   else if (res.data === 0) {
-    window.alert("Invalid amount");
+    window.alert("Insufficient Amount");
   }
   else if (res.data === 1) {
-    window.alert("Invalid receiver account number");
+    window.alert("Invalid Receiver Account Number");
   }
   else {
     window.alert("Money transfer successfully");

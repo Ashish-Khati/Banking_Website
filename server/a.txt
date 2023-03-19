@@ -1,6 +1,3 @@
-mongodb+srv://AshishKhati:Akg24072003@cluster0.tncnvv1.mongodb.net/?retryWrites=true&w=majority
-
-
 
 {
     

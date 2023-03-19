@@ -19,9 +19,9 @@ const Customer = () => {
     useEffect(() => {
         getData();
     }, [])
-    return <>
+    return <div className="w-full">
 
-           <div  className=' bg-[url("./assets/employee.jpg")] md:bg-repeat bg-fixed bg-cover border border-black h-auto w-screen '>
+           <div  className=' bg-[url("./assets/employee.jpg")] md:bg-repeat bg-fixed bg-cover  h-auto '>
            <Nav
            l1='action'
            l2='action'
@@ -31,17 +31,18 @@ const Customer = () => {
 
            />
             <Action/>
-            <div className="text-center my-10 flex items-center justify-between">
-                <h1 className="ml-80">Customer Details</h1>
-            <div className=" text-end mr-10 mt-5">  <button className='bg-green-400 '><Link to='/' className='text-white hover:text-white'>Back To Home</Link></button> </div>
+            <div className="text-center my-10 ">
+                <h1 className="">Customer Details</h1>
+            {/* <div className=" text-end mr-10 mt-5">  <button className='bg-green-400 '><Link to='/' className='text-white hover:text-white'>Back To Home</Link></button> </div> */}
             </div>
-        <table id="customer" className=" pr-20  table-fixed border-separate w-screen ml-10  rounded-lg mb-40">
+        <div className="flex">
+        <table id="customer" className=" pr-20  table-auto border-separate w-screen ml-32 md:ml-5   rounded-lg mb-40">
             <thead className="bg-gray-50  border-b-2 border-gray-200">
             <tr>
                 {/* <th className="p-3 w-24 text-sm font-semibold tracking-wide text-left">ID</th> */}
-                <th className="p-3  w-24 text-sm font-semibold tracking-wide text-left">Name</th>
-                <th className="p-3  w-24 text-sm font-semibold tracking-wide text-left">Account Number</th>
-                <th className="p-3  w-24 text-sm font-semibold tracking-wide text-left">Balance</th>
+                <th className="p-3  w-24 text-center text-2xl font-semibold tracking-wide ">Name</th>
+                <th className="p-3  w-24 text-center text-2xl font-semibold tracking-wide ">Account Number</th>
+                <th className="p-3  w-24 text-center text-2xl font-semibold tracking-wide ">Balance</th>
             </tr>
             </thead>
             <tbody>
@@ -54,9 +55,9 @@ const Customer = () => {
                     return (
                         <tr className="bg-gray-200" key={id}>
                         {/* <td className="p-3 text-sm text-gray-700">{id}</td> */}
-                        <td className="p-3 text-sm  text-gray-700">{name}</td>
-                        <td className="p-3 text-sm text-gray-700">{myaccount}</td>
-                        <td className="p-3 text-sm text-gray-700">{balance}</td>
+                        <td className="p-3 text-center text-sm font-bold  text-gray-700">{name}</td>
+                        <td className="p-3 text-center text-sm font-semibold  text-gray-700">{myaccount}</td>
+                        <td className="p-3 text-center text-sm font-semibold text-gray-700">{balance}</td>
                         </tr>
                     )
                 })}
@@ -65,10 +66,11 @@ const Customer = () => {
             {/* <Table users={users}/> */}
             </tbody>
         </table>
+        </div>
         <Contact/>
            </div>
         
-    </>
+    </div>
 }
 
 
