@@ -2,6 +2,7 @@ const express=require('express')
 const router=express.Router();
 require('../DB/conn')
 const User=require('../models/userSchema')
+const Passbook=require('../models/passbookSchema')
 
 router.get("/user",async(req,res)=>{
   try{
@@ -115,6 +116,71 @@ router.post('/transfer', async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 
+});
+
+
+// *****************************************************************************************************
+
+// passbook 
+// router.get('/passbook/:accountNumber', (req, res) => {
+//   const accountNumber = req.params.accountNumber;
+//   Passbook.findOne({ accountNumber }, (err, passbook) => {
+//     if (err) {
+//       console.log(err);
+//       res.status(500).send('Server error');
+//     } else {
+//       res.send(passbook);
+//     }
+//   });
+// });
+
+
+// router.post('/passbook/:accountNumber', (req, res) => {
+//   const accountNumber = req.params.accountNumber;
+//   const { date, description, amount } = req.body;
+//   Passbook.findOne({ accountNumber }, (err, passbook) => {
+//     if (err) {
+//       console.log(err);
+//       res.status(500).send('Server error');
+//     } else if (!passbook) {
+//       res.status(404).send('Passbook not found');
+//     } else {
+//       passbook.transactions.push({ date, description, amount });
+//       passbook.save((err, updatedPassbook) => {
+//         if (err) {
+//           console.log(err);
+//           res.status(500).send('Server error');
+//         } else {
+//           res.send(updatedPassbook);
+//         }
+//       });
+//     }
+//   });
+// });
+
+
+// ***********************************************************************************************
+
+router.get('/passbook/:accountNumber', (req, res) => {
+  const { accountNumber } = req.params;
+  Passbook.findOne({ accountNumber })
+    .then(passbook => res.json(passbook))
+    .catch(err => res.status(500).json({ error: err.message }));
+});
+
+router.post('/passbook/:accountNumber', (req, res) => {
+  const { accountNumber } = req.params;
+  const { date, description, amount } = req.body;
+  Passbook.findOne({ accountNumber })
+    .then(passbook => {
+      if (!passbook.transactions) {
+        passbook.transactions = [];
+      }
+      passbook.transactions.push({ date, description, amount });
+      return passbook.save();
+    })
+    .then(passbook => res.json(passbook))
+    .catch(err => res.status(500).json({ error: err.message }));
 });
 
   

@@ -9,7 +9,7 @@ const AboutMe = () => {
   return (
     
    <div className="w-screen  m-auto px-10 py-10 ">
-     <div className='md:flex bg-gray-100 max-w-auto md:w-[60%]   items-center  px-20 py-20 rounded-xl '>
+     <div className='md:flex bg-gray-100 max-w-auto md:w-[60%] shadow-2xl  items-center  px-20 py-20 rounded-xl '>
       <div className='mr-8 '>
         <div className='w-[300px] h-[450px] bg-[#8ab4f8] font-[Montserrat] rounded-xl relative items-center m-auto text-center'>
           <img src={am} alt="" className='absolute rounded-full -top-10 left-20' />

@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
 import { Table,Action,Nav,Contact } from "../components";
+import {Link} from 'react-router-dom'
 // import axios from "axios";
 
 // const API = "https://jsonplaceholder.typicode.com/users";
@@ -30,7 +31,10 @@ const Customer = () => {
 
            />
             <Action/>
-            <div className="text-center my-10"><h1>Customer Details</h1></div>
+            <div className="text-center my-10 flex items-center justify-between">
+                <h1 className="ml-80">Customer Details</h1>
+            <div className=" text-end mr-10 mt-5">  <button className='bg-green-400 '><Link to='/' className='text-white hover:text-white'>Back To Home</Link></button> </div>
+            </div>
         <table id="customer" className=" pr-20  table-fixed border-separate w-screen ml-10  rounded-lg mb-40">
             <thead className="bg-gray-50  border-b-2 border-gray-200">
             <tr>

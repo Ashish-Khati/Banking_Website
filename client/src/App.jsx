@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter,Link,Route,Routes } from 'react-router-dom'
-import { Home,Customer,AboutMe } from './pages'
+import { Home,Customer,AboutMe,AccountOpen } from './pages'
 const App = () => {
   return (
     <BrowserRouter>
@@ -13,6 +13,7 @@ const App = () => {
     <Route exact path="/" element={<Home />} />
         <Route path="/viewcustomer" element={<Customer />} />
         <Route path="/aboutme" element={<AboutMe />} />
+        <Route path='/openaccount' element={<AccountOpen/>}/>
     </Routes>
     </BrowserRouter>
   )
