@@ -1,3 +1,4 @@
 import Home from "./Home";
 import Customer from "./Customer";
-export {Home,Customer}
+import AboutMe from "./AboutMe";
+export {Home,Customer, AboutMe}

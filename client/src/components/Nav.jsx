@@ -23,7 +23,7 @@ const Nav = (props) => {
          className='hover:bg-blue-600 rounded-full hover:text-white cursor-pointer w-[60px] h-[60px] flex items-center justify-center'>
         <BsBriefcase/>
         </Link>
-        <Link to={props.l2} 
+        <Link to={props.l3} 
          activeClass='active'
          smooth={true}
          spy={true}
@@ -33,7 +33,7 @@ const Nav = (props) => {
         />
         </Link>
         
-        <Link to={props.l3}
+        <Link to={props.l4}
          activeClass='active'
          smooth={true}
          spy={true}
@@ -43,7 +43,7 @@ const Nav = (props) => {
        
         <Link 
         // to="contact"
-        to={props.l4}
+        to={props.l5}
         activeClass='active'
         smooth={true}
         spy={true}

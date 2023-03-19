@@ -3,10 +3,13 @@ import am from '../assets/am.jpg'
 import {CiLinkedin} from 'react-icons/ci'
 import {AiFillGithub} from 'react-icons/ai'
 import {BsInstagram} from 'react-icons/bs'
+import {SiGmail} from 'react-icons/si'
+import {Link} from 'react-router-dom'
 const AboutMe = () => {
   return (
     
-    <div className='md:flex bg-gray-100 max-w-auto md:w-[60%]   items-center mx-10 px-5 py-5 rounded-xl mb-10 pt-20 pb-20'>
+   <div className="w-screen  m-auto px-10 py-10 ">
+     <div className='md:flex bg-gray-100 max-w-auto md:w-[60%]   items-center  px-20 py-20 rounded-xl '>
       <div className='mr-8 '>
         <div className='w-[300px] h-[450px] bg-[#8ab4f8] font-[Montserrat] rounded-xl relative items-center m-auto text-center'>
           <img src={am} alt="" className='absolute rounded-full -top-10 left-20' />
@@ -17,10 +20,11 @@ const AboutMe = () => {
             </h2>
             <p className='pt-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione repellendus nam officia. Natus placeat magni quisquam eum cupiditate sed.</p>
             </div>
-            <div className='flex space-x-1 rounded-full text-black w-auto  absolute bottom-10 left-16  h-10'>
-              <CiLinkedin className=' w-[50px] h-[30px] bg-[#8ab4f8] cursor-pointer' />
-              <AiFillGithub className='bg-[#8ab4f8] w-[50px] h-[30px] cursor-pointer'/>
-              <BsInstagram className='bg-[#8ab4f8] w-[50px] h-[30px]  cursor-pointer'/>
+            <div className='flex space-x-1 rounded-full text-black w-auto  absolute bottom-10 left-10 h-10'>
+              <Link to='https://www.linkedin.com/in/ashish-khati-30a5161a1/' className='text-black hover:text-white'><CiLinkedin className=' w-[50px] h-[30px] bg-[#8ab4f8] cursor-pointer' /></Link>
+             <Link to='https://github.com/Ashish-Khati'  className='text-black hover:text-white'> <AiFillGithub className='bg-[#8ab4f8] w-[50px] h-[30px] cursor-pointer'/></Link>
+              <Link to='https://www.instagram.com/ashish._.khati/'  className='text-black hover:text-white'><BsInstagram className='bg-[#8ab4f8] w-[50px] h-[30px]  cursor-pointer'/></Link>
+              <Link to="" className='text-black hover:text-white'> <SiGmail className='bg-[#8ab4f8] w-[50px] h-[30px] cursor-pointer'/></Link>
 
             </div>
        
@@ -33,6 +37,7 @@ const AboutMe = () => {
         <button className='bg-green-400 text-white cursor-pointer hover:bg-green-500 outline-none border mt-5'>Contact Me</button>
       </div>
     </div>
+   </div>
   )
 }
 

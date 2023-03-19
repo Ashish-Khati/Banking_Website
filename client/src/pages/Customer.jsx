@@ -22,10 +22,11 @@ const Customer = () => {
 
            <div  className=' bg-[url("./assets/employee.jpg")] md:bg-repeat bg-fixed bg-cover border border-black h-auto w-screen '>
            <Nav
-           l1='/'
+           l1='action'
            l2='action'
            l3='customer'
            l4='contact'
+           l5='contact'
 
            />
             <Action/>
