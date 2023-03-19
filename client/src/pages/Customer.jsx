@@ -36,7 +36,7 @@ const Customer = () => {
             {/* <div className=" text-end mr-10 mt-5">  <button className='bg-green-400 '><Link to='/' className='text-white hover:text-white'>Back To Home</Link></button> </div> */}
             </div>
         <div className="flex">
-        <table id="customer" className=" pr-20  table-auto border-separate w-screen ml-32 md:ml-5   rounded-lg mb-40">
+        <table id="customer" className=" pr-20  table-auto border-collapse w-screen ml-32 md:ml-5   rounded-lg mb-40">
             <thead className="bg-gray-50  border-b-2 border-gray-200">
             <tr>
                 {/* <th className="p-3 w-24 text-sm font-semibold tracking-wide text-left">ID</th> */}
