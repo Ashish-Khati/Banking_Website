@@ -11,7 +11,7 @@ const Customer = () => {
     const [users, setUsers] = useState([]);
 
     const getData =  async() => {
-        const data=await axios.get('http://localhost:3000/user')
+        const data=await axios.get('http://localhost:8080/user')
         setUsers(data)
     }
 

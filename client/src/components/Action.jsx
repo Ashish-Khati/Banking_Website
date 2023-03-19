@@ -34,7 +34,7 @@ const sendMoney=async(e)=>{
 
   // *************************************************
 
-  const res=await axios.post("http://localhost:3000/transfer",data);
+  const res=await axios.post("http://localhost:8080/transfer",data);
   if (res.data === 2) {
     window.alert("Invalid Sender Account Number");
   }

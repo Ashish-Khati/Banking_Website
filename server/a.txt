@@ -32,3 +32,7 @@
 "reciveraccount":1234566,
 "amount":345
 }
+
+
+
+    "test": "echo \"Error: no test specified\" && exit 1"
