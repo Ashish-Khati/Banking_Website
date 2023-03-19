@@ -24,8 +24,6 @@ const AboutMe = () => {
               <Link to='https://www.linkedin.com/in/ashish-khati-30a5161a1/' className='text-black hover:text-white'><CiLinkedin className=' w-[50px] h-[30px] bg-[#8ab4f8] cursor-pointer' /></Link>
              <Link to='https://github.com/Ashish-Khati'  className='text-black hover:text-white'> <AiFillGithub className='bg-[#8ab4f8] w-[50px] h-[30px] cursor-pointer'/></Link>
               <Link to='https://www.instagram.com/ashish._.khati/'  className='text-black hover:text-white'><BsInstagram className='bg-[#8ab4f8] w-[50px] h-[30px]  cursor-pointer'/></Link>
-              <Link to="" className='text-black hover:text-white'> <SiGmail className='bg-[#8ab4f8] w-[50px] h-[30px] cursor-pointer'/></Link>
-
             </div>
        
         </div>
